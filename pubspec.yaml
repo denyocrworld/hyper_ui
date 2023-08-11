@@ -1,0 +1,47 @@
+name: hyper_ui
+description: A new Flutter project.
+publish_to: 'none' 
+version: 1.0.0+1
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  freezed_annotation: ^2.1.0
+  json_annotation: ^4.7.0
+  intl: ^0.18.1
+  google_fonts: ^4.0.4
+  material_design_icons_flutter: ^7.0.7296
+  image_picker: ^0.8.5+3
+  file_picker: ^5.2.2
+  uuid: ^3.0.6
+  flutter_image_compress: ^2.0.3
+  cached_network_image: ^3.2.2
+  permission_handler: ^10.0.2
+  geolocator: ^9.0.2
+  flutter_map: ^4.0.0
+  carousel_slider: ^4.1.1
+  flutter_rating_bar: ^4.0.1
+  url_launcher: ^6.1.6
+  blur: ^3.1.0
+  flutter_svg: ^2.0.5
+  custom_clippers: ^2.0.0
+  badges: ^3.1.1
+  flutter_markdown: ^0.6.12
+  dotted_border: ^2.0.0+3
+  faker_dart: ^0.1.11
+  syncfusion_flutter_charts: ^21.2.4
+  qr_flutter: ^4.0.0
+  path_provider: ^2.0.11
+  flutter_animate: ^4.1.1+1
+  dio: ^5.0.1
+  flutter_staggered_grid_view: ^0.6.2
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/icon/
