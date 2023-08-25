@@ -1,6 +1,5 @@
-import 'package:hyper_ui/core.dart';
-import 'package:hyper_ui/core.dart';
 import 'package:flutter/material.dart';
+import 'package:hyper_ui/module/login_form/view/signup_form_view.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -18,15 +17,10 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Capek Ngoding',
-      navigatorKey: Get.navigatorKey,
+      // navigatorKey: Get.navigatorKey,3
       debugShowCheckedModeBanner: false,
-      theme: getDefaultTheme(),
-      home: MainNavigationView(),
-      builder: (context, child) => DebugView(
-        context: context,
-        child: child,
-        visible: true,
-      ),
+      // theme: getDefaultTheme(),
+      home: SignUpFormView(),
     );
   }
 }

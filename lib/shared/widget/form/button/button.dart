@@ -8,10 +8,12 @@ class QButton extends StatelessWidget {
   final IconData? prefixIcon;
   final IconData? sufixIcon;
   final Color? color;
+  final Color? textcolor;
   final bool spaceBetween;
 
   QButton({
     Key? key,
+    this.textcolor,
     required this.label,
     required this.onPressed,
     this.width,
@@ -47,6 +49,7 @@ class QButton extends StatelessWidget {
             Text(
               label,
               style: TextStyle(
+                color: textcolor ?? Colors.white,
                 fontSize: 16.0,
               ),
             ),

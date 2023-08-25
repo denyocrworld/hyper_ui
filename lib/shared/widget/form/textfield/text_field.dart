@@ -9,6 +9,8 @@ class QTextField extends StatefulWidget {
   final String? Function(String?)? validator;
   final bool obscure;
   final bool enabled;
+
+  final bool isObscured;
   final int? maxLength;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
@@ -27,6 +29,7 @@ class QTextField extends StatefulWidget {
     required this.onChanged,
     this.onSubmitted,
     this.obscure = false,
+    this.isObscured = false,
     this.enabled = true,
     this.prefixIcon,
     this.suffixIcon,
@@ -73,11 +76,19 @@ class _QTextFieldState extends State<QTextField> {
         enabled: widget.enabled,
         controller: textEditingController,
         focusNode: focusNode,
+        cursorColor: Color(0xFF9B51E0),
         validator: widget.validator,
         maxLength: widget.maxLength,
-        obscureText: widget.obscure,
+        obscureText: widget.isObscured,
         decoration: InputDecoration(
+          focusedBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Color(0xFF9B51E0))),
+          // border:
+          //      UnderlineInputBorder(borderSide: BorderSide(none)),
+          border: UnderlineInputBorder(
+              borderSide: BorderSide(color: Color(0xFF9B51E0))),
           labelText: widget.label,
+          labelStyle: TextStyle(color: Color(0xFF9B51E0)),
           suffixIcon: Icon(
             widget.suffixIcon ?? Icons.abc,
           ),
