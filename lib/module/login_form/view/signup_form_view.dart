@@ -97,11 +97,7 @@ class SignUpFormView extends StatefulWidget {
                   backgroundColor: Color(0xFF9B51E0),
                 ),
                 onPressed: () {},
-<<<<<<< Updated upstream
-                child: const Text("Sign Upgertert"),
-=======
-                child: const Text("Sign Upfghfghf"),
->>>>>>> Stashed changes
+                child: const Text("Sign Up"),
               ),
             ],
           ),
