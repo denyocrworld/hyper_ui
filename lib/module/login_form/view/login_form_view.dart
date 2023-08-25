@@ -61,18 +61,18 @@ class LoginFormView extends StatefulWidget {
                       width: 150,
                       height: 50,
                       child: QButton(
-                        label: "LogIn",
-                        color: Color(0xFF9B51E0),
-                        onPressed: () => SignUpFormView(),
-                        // onPressed: () {
-                        //   Navigator.push(
-                        //     context,
-                        //     MaterialPageRoute(
-                        //         builder: (context) => SignUpFormView()),
-                        //   );
-                        // }
-                      ),
+                          label: "LogIn",
+                          color: Color(0xFF9B51E0),
+                          // onPressed: () => SignUpFormView(),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SignUpFormView()),
+                            );
+                          }),
                     ),
+                    SizedBox(height: 10),
                     Container(
                       width: 150,
                       height: 50,
