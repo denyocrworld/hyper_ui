@@ -23,7 +23,7 @@ class MainApp extends StatelessWidget {
       // navigatorKey: Get.navigatorKey,3
       debugShowCheckedModeBanner: false,
       // theme: getDefaultTheme(),
-      home: AddReportPage(),
+      home: ReportPage(),
     );
   }
 }

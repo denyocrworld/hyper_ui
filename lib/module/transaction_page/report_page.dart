@@ -12,6 +12,59 @@ class ReportPage extends StatefulWidget {
 }
 
 class _ReportPageState extends State<ReportPage> {
+  void openDialog() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            content: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 5),
+                    child: Text(
+                      "Penyalahgunaan KIP-K 1",
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: Text(
+                      "Are you sure to delete this report?",
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.grey,
+                          elevation: 10,
+                        ),
+                        onPressed: () {},
+                        child: Text("Cancel"),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                          elevation: 10,
+                        ),
+                        onPressed: () {},
+                        child: Text("Delete"),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,12 +165,28 @@ class _ReportPageState extends State<ReportPage> {
         child: ListTile(
           trailing: Row(
             mainAxisSize: MainAxisSize.min,
-            children: const [
-              Icon(Icons.edit),
+            children: [
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white, elevation: 0),
+                  onPressed: () {},
+                  child: Icon(
+                    Icons.edit,
+                    color: Colors.grey,
+                  )),
               SizedBox(
-                width: 10,
+                width: 5,
               ),
-              Icon(Icons.delete)
+              ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white, elevation: 0),
+                  onPressed: () {
+                    openDialog();
+                  },
+                  child: Icon(
+                    Icons.delete,
+                    color: Colors.grey,
+                  )),
             ],
           ),
           title: const Text("Report pelanggaran KIP-K 1"),
