@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:hyper_ui/module/transaction_page/add_report_page.dart';
+import 'package:hyper_ui/module/transaction_page/report_detail_page.dart';
 
 class ReportPage extends StatefulWidget {
   const ReportPage({super.key});
@@ -19,6 +20,8 @@ class _ReportPageState extends State<ReportPage> {
           return AlertDialog(
             content: SingleChildScrollView(
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(bottom: 5),
@@ -72,7 +75,6 @@ class _ReportPageState extends State<ReportPage> {
       body: Stack(
         children: [
           Container(
-              // padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               child: Column(
             children: [
               Container(
@@ -157,39 +159,51 @@ class _ReportPageState extends State<ReportPage> {
     );
   }
 
-  Padding reportItem() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Card(
-        elevation: 2,
-        child: ListTile(
-          trailing: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white, elevation: 0),
-                  onPressed: () {},
-                  child: Icon(
-                    Icons.edit,
-                    color: Colors.grey,
-                  )),
-              SizedBox(
-                width: 5,
-              ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white, elevation: 0),
-                  onPressed: () {
-                    openDialog();
-                  },
-                  child: Icon(
-                    Icons.delete,
-                    color: Colors.grey,
-                  )),
-            ],
+  Widget reportItem() {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(
+          builder: (context) => ReportDetailPage(),
+        ))
+            .then((value) {
+          setState(() {});
+        });
+        ;
+      },
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Card(
+          elevation: 1,
+          child: ListTile(
+            trailing: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white, elevation: 0),
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.edit,
+                      color: Colors.grey,
+                    )),
+                SizedBox(
+                  width: 5,
+                ),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white, elevation: 0),
+                    onPressed: () {
+                      openDialog();
+                    },
+                    child: Icon(
+                      Icons.delete,
+                      color: Colors.grey,
+                    )),
+              ],
+            ),
+            title: const Text("Report pelanggaran KIP-K 1"),
           ),
-          title: const Text("Report pelanggaran KIP-K 1"),
         ),
       ),
     );
